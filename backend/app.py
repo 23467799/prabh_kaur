@@ -36,7 +36,7 @@ def upload_to_database():
     try:
         cur.execute("INSERT INTO myschema.mytable (name, country) VALUES (%s, %s)", (name, country))
         conn.commit()
-        return jsonify({'message': ' Inserted Data uploaded successfully'}), 200
+        return jsonify({'message': 'Data uploaded successfully'}), 200
     except psycopg2.Error as e:
         conn.rollback()
         return jsonify({'error': 'Failed to upload data to database', 'details': str(e)}), 500
