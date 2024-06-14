@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbapp-deployment
+  namespace: myappdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dbapp
+  template:
+    metadata:
+      labels:
+        app: dbapp
+    spec:
+      containers:
+      - name: mydbapp-container
+        image: gcr.io/inclassproject-424621/dbapp:latest
+        
+      
+      imagePullSecrets:
+      - name: regcred

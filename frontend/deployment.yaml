@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontdb-deployment
+  namespace: frontappdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontdb
+  template:
+    metadata:
+      labels:
+        app: frontdb
+    spec:
+      containers:
+      - name: myfrontdb-container
+        image: gcr.io/inclassproject-424621/frontdb:latest
+      imagePullSecrets:
+      - name: regcred
