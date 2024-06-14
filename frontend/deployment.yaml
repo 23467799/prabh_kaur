@@ -18,3 +18,4 @@ spec:
         image: gcr.io/inclassproject-424621/frontdb:latest
       imagePullSecrets:
       - name: regcred
+      #yaml file

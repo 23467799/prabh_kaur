@@ -17,6 +17,7 @@ spec:
       - name: mydbapp-container
         image: gcr.io/inclassproject-424621/dbapp:latest
         
-      
+     
       imagePullSecrets:
       - name: regcred
+#yaml file
