@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consumer
+  template:
+    metadata:
+      labels:
+        app: consumer
+    spec:
+      containers:
+      - name: consumer
+        image: gcr.io/inclassproject-424621/consumer
+        env:
+        - name: GOOGLE_CLOUD_PROJECT
+          value: "inclassproject-424621"
+        - name: DB_HOST
+          value: "35.232221.230"
+        - name: DB_USER
+          value: "parbhjot"
+        - name: DB_PASSWORD
+          value: "Prabhjott@123"
+        - name: DB_NAME
+          value: "myappdbs"
